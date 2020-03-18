@@ -5,9 +5,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
-@Configuration
+//@Configuration
 //@ComponentScan(basePackages = "com.apress.prospring5")
-@ImportResource(locations = "classpath:app-context-xml.xml")
+//@ImportResource(locations = "classpath:app-context-xml.xml")
 public class HelloWorldConfiguration {
 
 //    @Bean

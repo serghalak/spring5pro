@@ -8,16 +8,16 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-<!--   <context:component-scan base-package="com.apress.prospring5"/>-->
+   <context:component-scan base-package="com.apress.prospring5"/>
 
-    <bean id="provider"
-          class="com.apress.prospring5.ch3.decoupled.ConfigurableMessageProvider"
-    c:message="I hope that someone gets my message in a bottle">
-<!--       <constructor-arg value="I hope that someone gets my message in a bottle"/>-->
+<!--    <bean id="provider"-->
+<!--          class="com.apress.prospring5.ch3.decoupled.ConfigurableMessageProvider"-->
+<!--    c:message="I hope that someone gets my message in a bottle">-->
+<!--&lt;!&ndash;       <constructor-arg value="I hope that someone gets my message in a bottle"/>&ndash;&gt;-->
 
-    </bean>
-    <bean id="renderer" class="com.apress.prospring5.ch3.decoupled.StandardOutMessageRenderer">
-        <property name="messageProvider" ref="provider"/>
-    </bean>
+<!--    </bean>-->
+<!--    <bean id="renderer" class="com.apress.prospring5.ch3.decoupled.StandardOutMessageRenderer">-->
+<!--        <property name="messageProvider" ref="provider"/>-->
+<!--    </bean>-->
 
 </beans>
