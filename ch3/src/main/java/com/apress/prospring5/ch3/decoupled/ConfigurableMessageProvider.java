@@ -10,7 +10,7 @@ public class ConfigurableMessageProvider implements MessageProvider {
     private String message;
 
     @Autowired
-    public ConfigurableMessageProvider(@Value("Configurable message")
+    public ConfigurableMessageProvider(/*@Value("Configurable message")*/
                                                    String message) {
         this.message = message;
     }

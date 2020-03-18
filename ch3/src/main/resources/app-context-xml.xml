@@ -20,4 +20,9 @@
 <!--        <property name="messageProvider" ref="provider"/>-->
 <!--    </bean>-->
 
+    <bean id="message" class="java.lang.String"
+          c:_0="I hope that someone gets my message in a bottle"/>
+    <bean id="message2" class="java.lang.String"
+          c:_0="I know I won't be injected :("/>
+
 </beans>
