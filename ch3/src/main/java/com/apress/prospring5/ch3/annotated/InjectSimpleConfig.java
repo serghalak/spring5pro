@@ -1,13 +1,12 @@
-package com.apress.prospring5.ch3.xml;
+package com.apress.prospring5.ch3.annotated;
 
-import com.apress.prospring5.ch3.annotated.Singer;
+import com.apress.prospring5.ch3.xml.InjectSimple;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.support.GenericXmlApplicationContext;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-@Service("injectSimple")
-public class InjectSimple {
-
+@Component("injectSimpleConfig")
+public class InjectSimpleConfig {
     @Value("John Mayer")
     private String name;
     @Value("40")
@@ -19,15 +18,7 @@ public class InjectSimple {
     @Value("1241401112")
     private Long ageInSeconds;
 
-    public static void main(String[] args) {
-        GenericXmlApplicationContext context=
-                new GenericXmlApplicationContext();
-        context.load("classpath:spring/app-context-annotation.xml");
-        context.refresh();
-        InjectSimple simple = context.getBean("injectSimple",InjectSimple.class);
-        System.out.println(simple);
-        context.close();
-    }
+
 
     public String getName() {
         return name;
@@ -69,14 +60,5 @@ public class InjectSimple {
         this.ageInSeconds = ageInSeconds;
     }
 
-    @Override
-    public String toString() {
-        return "InjectSimple{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", height=" + height +
-                ", programmer=" + programmer +
-                ", ageInSeconds=" + ageInSeconds +
-                '}';
-    }
+
 }

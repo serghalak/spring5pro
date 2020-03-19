@@ -8,14 +8,21 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="injectSimpleConfig"
-          class="com.apress.prospring5.ch3.xml.InjectSimpleConfig"/>
+<!--    <bean id="injectSimpleConfig"-->
+<!--          class="com.apress.prospring5.ch3.xml.InjectSimpleConfig"/>-->
 
-    <bean id="injectSimpleSpel"
-          class="com.apress.prospring5.ch3.xml.InjectSimpleSpel"
-          p:name="#{injectSimpleConfig.name}"
-          p:age="#{injectSimpleConfig.age + 1}"
-          p:height="#{injectSimpleConfig.height}"
-          p:isProgrammer="#{injectSimpleConfig.programmer}"
-          p:ageInSeconds="#{injectSimpleConfig.ageInSeconds}"/>
+<!--    <bean id="injectSimpleSpel"-->
+<!--          class="com.apress.prospring5.ch3.xml.InjectSimpleSpel"-->
+<!--          p:name="#{injectSimpleConfig.name}"-->
+<!--          p:age="#{injectSimpleConfig.age + 1}"-->
+<!--          p:height="#{injectSimpleConfig.height}"-->
+<!--          p:isProgrammer="#{injectSimpleConfig.programmer}"-->
+<!--          p:ageInSeconds="#{injectSimpleConfig.ageInSeconds}"/>-->
+
+    <bean id="oracle" name="wiseworm"
+          class="com.apress.prospring5.ch3.xml.BookwormOracle"/>
+
+    <bean id="injectRef" class="com.apress.prospring5.ch3.xml.InjectRef">
+        <property name="oracle" ref="oracle"/>
+    </bean>
 </beans>
