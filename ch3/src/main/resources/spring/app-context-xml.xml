@@ -19,10 +19,20 @@
 <!--          p:isProgrammer="#{injectSimpleConfig.programmer}"-->
 <!--          p:ageInSeconds="#{injectSimpleConfig.ageInSeconds}"/>-->
 
-    <bean id="oracle" name="wiseworm"
-          class="com.apress.prospring5.ch3.xml.BookwormOracle"/>
+<!--    <bean id="oracle" name="wiseworm"-->
+<!--          class="com.apress.prospring5.ch3.xml.BookwormOracle"/>-->
 
-    <bean id="injectRef" class="com.apress.prospring5.ch3.xml.InjectRef">
-        <property name="oracle" ref="oracle"/>
+<!--    <bean id="injectRef" class="com.apress.prospring5.ch3.xml.InjectRef">-->
+<!--        <property name="oracle" ref="oracle"/>-->
+<!--    </bean>-->
+
+    <bean id="singer" class="com.apress.prospring5.ch3.Singer" scope="prototype"/>
+    <bean id="abstractLookupBean" class="com.apress.prospring5.ch3.AbstractLookupDemoBean">
+        <lookup-method name="getMySinger" bean="singer"/>
+
+    </bean>
+
+    <bean id="standardLookupBean" class="com.apress.prospring5.ch3.StandardLookupDemoBean">
+        <property name="mySinger" ref="singer"/>
     </bean>
 </beans>
