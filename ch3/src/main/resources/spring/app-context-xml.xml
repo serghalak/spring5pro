@@ -36,15 +36,18 @@
 <!--        <property name="mySinger" ref="singer"/>-->
 <!--    </bean>-->
 
-    <bean id="methodReplacer"
-          class="com.apress.prospring5.ch3.replacemethod.FormatMessageReplacer"/>
-    <bean id="replacementTarget"
-          class="com.apress.prospring5.ch3.replacemethod.ReplacementTarget">
-        <replaced-method name="formatMessage" replacer="methodReplacer">
-            <arg-type>String</arg-type>
-        </replaced-method>
-    </bean>
-    <bean id="standardTarget"
-          class="com.apress.prospring5.ch3.replacemethod.ReplacementTarget"/>
+<!--    <bean id="methodReplacer"-->
+<!--          class="com.apress.prospring5.ch3.replacemethod.FormatMessageReplacer"/>-->
+<!--    <bean id="replacementTarget"-->
+<!--          class="com.apress.prospring5.ch3.replacemethod.ReplacementTarget">-->
+<!--        <replaced-method name="formatMessage" replacer="methodReplacer">-->
+<!--            <arg-type>String</arg-type>-->
+<!--        </replaced-method>-->
+<!--    </bean>-->
+<!--    <bean id="standardTarget"-->
+<!--          class="com.apress.prospring5.ch3.replacemethod.ReplacementTarget"/>-->
+
+    <bean id="guitar" class="com.apress.prospring5.ch3.xml.Guitar" />
+    <bean id="singer" class="com.apress.prospring5.ch3.xml.Singer" depends-on="guitar"/>
 
 </beans>
