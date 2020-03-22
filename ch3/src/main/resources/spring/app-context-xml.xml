@@ -26,13 +26,25 @@
 <!--        <property name="oracle" ref="oracle"/>-->
 <!--    </bean>-->
 
-    <bean id="singer" class="com.apress.prospring5.ch3.Singer" scope="prototype"/>
-    <bean id="abstractLookupBean" class="com.apress.prospring5.ch3.AbstractLookupDemoBean">
-        <lookup-method name="getMySinger" bean="singer"/>
+<!--    <bean id="singer" class="com.apress.prospring5.ch3.Singer" scope="prototype"/>-->
+<!--    <bean id="abstractLookupBean" class="com.apress.prospring5.ch3.AbstractLookupDemoBean">-->
+<!--        <lookup-method name="getMySinger" bean="singer"/>-->
 
-    </bean>
+<!--    </bean>-->
 
-    <bean id="standardLookupBean" class="com.apress.prospring5.ch3.StandardLookupDemoBean">
-        <property name="mySinger" ref="singer"/>
+<!--    <bean id="standardLookupBean" class="com.apress.prospring5.ch3.StandardLookupDemoBean">-->
+<!--        <property name="mySinger" ref="singer"/>-->
+<!--    </bean>-->
+
+    <bean id="methodReplacer"
+          class="com.apress.prospring5.ch3.replacemethod.FormatMessageReplacer"/>
+    <bean id="replacementTarget"
+          class="com.apress.prospring5.ch3.replacemethod.ReplacementTarget">
+        <replaced-method name="formatMessage" replacer="methodReplacer">
+            <arg-type>String</arg-type>
+        </replaced-method>
     </bean>
+    <bean id="standardTarget"
+          class="com.apress.prospring5.ch3.replacemethod.ReplacementTarget"/>
+
 </beans>
