@@ -17,10 +17,19 @@ default-lazy-init="true">
 <!--          init-method="init" p:name="John Bullet"/> -->
 
 
-    <bean id="singerOne" class="com.apress.prospring5.ch4.SingerWithInterface"
-           p:name="John Mayer" p:age="39"/>
-    <bean id="singerTwo" class="com.apress.prospring5.ch4.SingerWithInterface"
-           p:age="72"/>
-    <bean id="singerThree" class="com.apress.prospring5.ch4.SingerWithInterface"
-           p:name="John Bullet"/>
+<!--    <bean id="singerOne" class="com.apress.prospring5.ch4.SingerWithInterface"-->
+<!--           p:name="John Mayer" p:age="39"/>-->
+<!--    <bean id="singerTwo" class="com.apress.prospring5.ch4.SingerWithInterface"-->
+<!--           p:age="72"/>-->
+<!--    <bean id="singerThree" class="com.apress.prospring5.ch4.SingerWithInterface"-->
+<!--           p:name="John Bullet"/>-->
+
+
+
+        <bean id="destructiveBean"
+              class="com.apress.prospring5.ch4.DestructiveBean"
+
+              p:filePath=
+                      "#{systemProperties['java.io.tmpdir']}#{systemProperties['file.separator']}test.txt"/>
+
 </beans>
