@@ -12,10 +12,16 @@
     <context:component-scan base-package="com.apress.prospring5.ch4"/>
 
 
-    <bean id="singerOne" class="com.apress.prospring5.ch4.SingerWithJSR250"
-          p:name="John Mayer" p:age="39"/>
-    <bean id="singerTwo" class="com.apress.prospring5.ch4.SingerWithJSR250"
-          p:age="72"/>
-    <bean id="singerThree" class="com.apress.prospring5.ch4.SingerWithJSR250"
-          p:name="John Bullet"/>
+<!--    <bean id="singerOne" class="com.apress.prospring5.ch4.SingerWithJSR250"-->
+<!--          p:name="John Mayer" p:age="39"/>-->
+<!--    <bean id="singerTwo" class="com.apress.prospring5.ch4.SingerWithJSR250"-->
+<!--          p:age="72"/>-->
+<!--    <bean id="singerThree" class="com.apress.prospring5.ch4.SingerWithJSR250"-->
+<!--          p:name="John Bullet"/>-->
+
+    <bean id="destructiveBeanWithJSR250"
+          class="com.apress.prospring5.ch4.DestructiveBeanWithJSR250"
+          p:filePath=
+                  "#{systemProperties['java.io.tmpdir']}#{systemProperties['file.separator']}test.txt"/>
+
 </beans>
