@@ -1,15 +1,12 @@
 package com.apress.prospring5.ch4;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.io.File;
 
-//@Component
-public class DestructiveBeanWithJSR250 {
-
+public class DestructiveBeanWithHook {
     private File file;
     private String filePath;
 
@@ -19,7 +16,8 @@ public class DestructiveBeanWithJSR250 {
 
         if (filePath == null) {
             throw new IllegalArgumentException(
-                    "You must specify the filePath property of " + DestructiveBeanWithJSR250.class);
+                    "You must specify the filePath property of " +
+                            DestructiveBeanWithHook.class);
         }
 
         this.file = new File(filePath);
@@ -46,13 +44,11 @@ public class DestructiveBeanWithJSR250 {
     public static void main(String... args) throws Exception {
         GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
         ctx.load("classpath:spring/ch4/app-context-annotation.xml");
+        ctx.registerShutdownHook();
         ctx.refresh();
 
-        DestructiveBeanWithJSR250 bean = (DestructiveBeanWithJSR250) ctx.getBean("destructiveBeanWithJSR250");
+        ctx.getBean(DestructiveBeanWithHook.class);
 
-        System.out.println("Calling destroy()");
-        ctx.destroy();
-        System.out.println("Called destroy()");
         //ctx.close();
     }
 }

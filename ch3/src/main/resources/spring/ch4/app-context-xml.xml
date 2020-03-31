@@ -26,10 +26,12 @@ default-lazy-init="true">
 
 
 
-        <bean id="destructiveBean"
-              class="com.apress.prospring5.ch4.DestructiveBean"
+<!--        <bean id="destructiveBean"-->
+<!--              class="com.apress.prospring5.ch4.DestructiveBean"-->
 
-              p:filePath=
-                      "#{systemProperties['java.io.tmpdir']}#{systemProperties['file.separator']}test.txt"/>
+<!--              p:filePath=-->
+<!--                      "#{systemProperties['java.io.tmpdir']}#{systemProperties['file.separator']}test.txt"/>-->
+
+        <bean id="johnMayer" class="com.apress.prospring5.ch4.NamedSinger"/>
 
 </beans>

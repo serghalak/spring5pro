@@ -19,8 +19,12 @@
 <!--    <bean id="singerThree" class="com.apress.prospring5.ch4.SingerWithJSR250"-->
 <!--          p:name="John Bullet"/>-->
 
-    <bean id="destructiveBeanWithJSR250"
-          class="com.apress.prospring5.ch4.DestructiveBeanWithJSR250"
+<!--    <bean id="destructiveBeanWithJSR250"-->
+<!--          class="com.apress.prospring5.ch4.DestructiveBeanWithJSR250"-->
+<!--          p:filePath=-->
+<!--                  "#{systemProperties['java.io.tmpdir']}#{systemProperties['file.separator']}test.txt"/>-->
+    <bean id="destructiveBeanWithHook"
+          class="com.apress.prospring5.ch4.DestructiveBeanWithHook"
           p:filePath=
                   "#{systemProperties['java.io.tmpdir']}#{systemProperties['file.separator']}test.txt"/>
 
