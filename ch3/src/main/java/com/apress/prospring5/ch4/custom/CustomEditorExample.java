@@ -15,6 +15,8 @@ public class CustomEditorExample {
         CustomEditorExample bean =
                 (CustomEditorExample) ctx.getBean("exampleBean");
         System.out.println(bean.getName());
+        System.out.println(bean.toString());
+
         ctx.close();
     }
 

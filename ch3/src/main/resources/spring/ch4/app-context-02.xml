@@ -18,4 +18,8 @@
     <bean id="exampleBean"
           class="com.apress.prospring5.ch4.custom.CustomEditorExample"
           p:name="John Mayer"/>
+<!--    <bean id="exampleBean2"-->
+<!--          class="java.lang.String" >-->
+<!--        <constructor-arg ref="exampleBean"/>-->
+<!--    </bean>-->
 </beans>
