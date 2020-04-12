@@ -71,9 +71,14 @@
 <!--                <value>labels</value>-->
 <!--        </util:list>-->
 
-        <bean id="publisher" class="com.apress.prospring5.ch4.Publisher"/>
-        <bean id="messageEventListener"
-              class="com.apress.prospring5.ch4.MessageEventListener"/>
+<!--        <bean id="publisher" class="com.apress.prospring5.ch4.Publisher"/>-->
+<!--        <bean id="messageEventListener"-->
+<!--              class="com.apress.prospring5.ch4.MessageEventListener"/>-->
+        <context:property-placeholder location="classpath:application.properties"/>
 
+        <bean id="appProperty"
+              class="com.apress.prospring5.ch4.property.AppProperty"
+              p:applicationHome="${application.home}"
+              p:userHome="${user.home}"/>
 
 </beans>
