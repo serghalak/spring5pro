@@ -74,7 +74,8 @@
 <!--        <bean id="publisher" class="com.apress.prospring5.ch4.Publisher"/>-->
 <!--        <bean id="messageEventListener"-->
 <!--              class="com.apress.prospring5.ch4.MessageEventListener"/>-->
-        <context:property-placeholder location="classpath:application.properties"/>
+        <context:property-placeholder
+                location="classpath:application.properties" local-override="true"/>
 
         <bean id="appProperty"
               class="com.apress.prospring5.ch4.property.AppProperty"
