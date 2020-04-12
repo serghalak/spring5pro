@@ -25,6 +25,7 @@ public class EnvironmentSampleLast {
         System.out.println("JAVA_HOME: " + env.getProperty("JAVA_HOME"));
 
         ctx.close();
+        //------------------------------------------new property
         System.out.println("aplication.home: "
                 + env.getProperty("application.home"));
     }
